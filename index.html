@@ -5,228 +5,181 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Teacher Learning Hub</title>
 <style>
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #000;
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{font-family:'Poppins',sans-serif; background:#000; color:#fff; overflow-x:hidden;}
+
+  /* HERO / BACKGROUND */
+  .hero{
+    position:relative;
+    height:100vh;
+    width:100%;
+    background-image: url("image/finalbackground.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+    padding-left:6%;
+    padding-right:6%;
+    filter:brightness(1.15);
   }
 
-  /* Navigation bar */
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 12px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 10;
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.25);
+    z-index:1;
   }
 
-  .navbar h1 {
-    color: #fff;
-    font-size: 20px;
-    margin: 0;
-    font-weight: 600;
+  /* HERO content container */
+  .hero-content{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    align-items:flex-start;
+    margin-top:60vh; /* moved down by 60% of viewport height */
   }
 
-  .nav-buttons {
-    display: flex;
-    gap: 10px;
-  }
-
-  .nav-buttons button {
-    padding: 8px 14px;
-    font-size: 14px;
-    font-weight: 600;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    color: #fff;
-    transition: 0.3s;
-  }
-
-  .start-btn {
-    background-color: #ff7e5f;
-  }
-
-  .start-btn:hover {
-    background-color: #feb47b;
-  }
-
-  .login-btn {
-    background-color: #86a8e7;
-  }
-
-  .login-btn:hover {
-    background-color: #91eae4;
-  }
-
-  /* Background section */
-  .background-section {
-    min-height: 100vh;
-    background-image: url('image/finalbackground.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: left;
-    padding: 100px 25px 40px;
-    filter: brightness(1.25);
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.25);
-    z-index: 1;
-  }
-
-  .overlay-text {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    max-width: 80%;
-    text-align: left;
-    margin-left: 40%; /* moved to right */
-  }
-
-  .overlay-text h1 {
-    font-size: 30px;
-    font-weight: 700;
-    background: linear-gradient(90deg, #ff7e5f, #feb47b, #86a8e7);
+  .hero-content h1{
+    font-size:28px;
+    font-weight:800;
+    background: linear-gradient(120deg, #ff6a00, #ffb347, #ffd700, #ff4500);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    margin-bottom:8px;
   }
 
-  .overlay-text p {
-    font-size: 17px;
-    color: #f5f5f5;
-    line-height: 1.6;
-    margin-bottom: 20px;
+  .hero-content p{
+    font-size:16px;
+    color:#f0f8ff;
+    line-height:1.6;
+    max-width:400px;
+    word-wrap:break-word;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
   }
 
-  /* Buttons */
-  .action-buttons {
-    display: flex;
-    justify-content: flex-start;
-    gap: 12px;
+  .buttons{
+    display:flex;
+    gap:12px;
+    margin-top:6px;
   }
 
-  .action-buttons button {
-    padding: 10px 20px;
-    font-size: 15px;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #fff;
-    transition: 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  .btn{
+    padding:10px 20px;
+    font-size:14px;
+    font-weight:700;
+    border:none;
+    border-radius:28px;
+    cursor:pointer;
+    color:#071426;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+    transition: transform .2s ease, box-shadow .2s ease;
   }
 
-  .enroll-btn {
-    background: linear-gradient(45deg, #ff6a00, #ffb347);
+  .btn.secondary{
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+    color:#fff;
   }
 
-  .view-btn {
-    background: linear-gradient(45deg, #00c6ff, #0072ff);
-  }
+  .btn:hover{ transform:scale(1.05); box-shadow:0 6px 18px rgba(0,0,0,0.45); }
 
-  .action-buttons button:hover {
-    transform: scale(1.05);
+  /* Teacher info at bottom right with smaller size and same gradient as heading */
+  .teacher-info{
+    position:absolute;
+    bottom:0; /* sit at the bottom of hero */
+    right:0; /* fully right */
+    text-align:right;
+    z-index:2;
+    padding:12px 20px;
+    border-radius:12px;
   }
-
-  /* Teacher info */
-  .teacher-info {
-    position: absolute;
-    bottom: 12%;
-    left: 8%;
-    z-index: 2;
-    text-align: left;
-  }
-
-  .teacher-info h1 {
-    font-size: 34px;
-    font-weight: 800;
-    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  .teacher-info h2{
+    font-size:32px; /* reduced by 15% */
+    font-weight:900;
+    margin-bottom:6px;
+    background: linear-gradient(120deg, #ff6a00, #ffb347, #ffd700, #ff4500);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 0;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
   }
-
-  .teacher-info p {
-    font-size: 20px;
-    color: #fff;
-    margin-top: 4px;
+  .teacher-info p{
+    font-size:15px; /* reduced by 15% */
+    font-weight:700;
+    background: linear-gradient(120deg, #ff6a00, #ffb347, #ffd700, #ff4500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    margin:0;
   }
 
   /* About section */
-  .about-section {
-    background-color: #000;
-    color: #fff;
-    padding: 60px 20px;
-    text-align: center;
+  .about{
+    background:#000;
+    color:#ddd;
+    padding:60px 6%;
+    text-align:center;
+  }
+  .about h3{
+    font-size:22px;
+    color:#ff6f61;
+    text-shadow:1px 1px 4px rgba(0,0,0,0.5);
+  }
+  .about p{
+    font-size:15px;
+    color:#cce7ff;
+    text-shadow:1px 1px 3px rgba(0,0,0,0.4);
   }
 
-  .about-section h2 {
-    font-size: 22px;
+  /* MOBILE adjustments */
+  @media (max-width:480px){
+    .hero h1{ font-size:24px; }
+    .hero p{ font-size:14px; max-width:360px; }
+    .btn{ padding:10px 16px; font-size:13px }
+    .teacher-info h2{ font-size:26px; }
+    .teacher-info p{ font-size:12px; }
+    .teacher-info{ bottom:0; right:0; padding:10px 14px; } /* adjust for mobile */
   }
-
-  .about-section p {
-    font-size: 15px;
-    color: #ccc;
-  }
-
 </style>
 </head>
 <body>
 
-  <!-- Navigation bar -->
-  <div class="navbar">
-    <h1>Teacher Hub</h1>
-    <div class="nav-buttons">
-      <button class="start-btn">Start</button>
-      <button class="login-btn">Login</button>
-    </div>
-  </div>
-
-  <!-- Background section -->
-  <div class="background-section">
-    <div class="overlay"></div>
-
-    <div class="overlay-text">
+  <section class="hero">
+    <div class="hero-content">
       <h1>Start your digital journey here</h1>
-      <p>Technology is important for success. Our course gives you key skills. Learn from an expert teacher. Sign up and start your new journey!</p>
-
-      <div class="action-buttons">
-        <button class="enroll-btn">Enroll Now</button>
-        <button class="view-btn">View Course</button>
+      <p>
+        Technology is important for success.<br>
+        Our course gives you key skills.<br>
+        Learn from an expert teacher.<br>
+        Sign up and start your new journey!
+      </p>
+      <div class="buttons">
+        <button class="btn">Enroll Now</button>
+        <button class="btn secondary">View Course</button>
       </div>
     </div>
 
     <div class="teacher-info">
-      <h1>Bagesh Hugar</h1>
+      <h2>Bagesh Hugar</h2>
       <p>MSc in Computer Science</p>
     </div>
-  </div>
+  </section>
 
-  <div class="about-section">
-    <h2>About the Teacher</h2>
+  <section class="about">
+    <h3>About the Teacher</h3>
     <p>Add your information here...</p>
-  </div>
+  </section>
 
 </body>
-                     </html>
+</html>
+
+
 
 
 
