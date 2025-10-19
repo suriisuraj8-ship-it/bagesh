@@ -8,6 +8,7 @@
   body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #000;
   }
 
   /* Top navigation bar */
@@ -15,51 +16,42 @@
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 15px 50px;
+    padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 10;
   }
 
   .navbar h1 {
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
     margin: 0;
     font-weight: bold;
   }
 
   .navbar .nav-buttons button {
-    margin-left: 15px;
-    padding: 14px 22px;
-    font-size: 18px;
+    margin-left: 10px;
+    padding: 12px 18px;
+    font-size: 16px;
     font-weight: bold;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    color: #fff;
   }
 
   .navbar .start-btn {
-    background-color: #ff7e5f;
-    color: #fff;
-  }
-
-  .navbar .start-btn:hover {
-    background-color: #feb47b;
+    background: linear-gradient(45deg, #ff6a00, #ffb347);
   }
 
   .navbar .login-btn {
-    background-color: #86a8e7;
-    color: #fff;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
   }
 
-  .navbar .login-btn:hover {
-    background-color: #91eae4;
-  }
-
-  /* Background image section */
+  /* Background section */
   .background-section {
     min-height: 100vh;
     background-image: url('image/finalbackground.png');
@@ -68,15 +60,13 @@
     background-repeat: no-repeat;
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    text-align: right;
-    padding-right: 50px;
-    padding-top: 100px;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 120px 20px 20px 20px;
     filter: brightness(1.2);
   }
 
-  /* Semi-transparent overlay */
   .overlay {
     position: absolute;
     top: 0;
@@ -87,55 +77,55 @@
     z-index: 1;
   }
 
-  /* Main overlay text */
+  /* Overlay text */
   .overlay-text {
     position: relative;
     z-index: 2;
-    max-width: 50%;
-    text-align: right;
+    width: 100%;
+    text-align: center;
     opacity: 0;
     animation: fadeIn 2s ease-in forwards;
   }
 
   .overlay-text h1 {
-    font-size: 50px;
+    font-size: 32px;
     font-weight: bold;
     background: linear-gradient(90deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 0;
+    margin: 0 0 15px 0;
   }
 
   .overlay-text p {
-    font-size: 20px;
+    font-size: 16px;
     color: #fff;
-    margin-top: 20px;
-    line-height: 1.6;
+    line-height: 1.5;
     background-color: rgba(0,0,0,0.35);
     display: inline-block;
-    padding: 12px 18px;
+    padding: 10px 15px;
     border-radius: 6px;
+    margin-bottom: 20px;
   }
 
   /* Buttons below info text */
   .overlay-text .action-buttons {
-    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
   }
 
   .overlay-text .action-buttons button {
-    padding: 14px 30px;
-    margin-left: 10px;
-    font-size: 18px;
+    padding: 14px 25px;
+    font-size: 16px;
     font-weight: bold;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
     color: #fff;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   }
 
-  /* Enroll Now Button */
   .overlay-text .enroll-btn {
     background: linear-gradient(45deg, #ff6a00, #ffb347);
   }
@@ -144,7 +134,6 @@
     box-shadow: 0 6px 15px rgba(0,0,0,0.4);
   }
 
-  /* View Course Button */
   .overlay-text .view-btn {
     background: linear-gradient(45deg, #00c6ff, #0072ff);
   }
@@ -158,79 +147,35 @@
     100% { opacity: 1; transform: translateY(0); }
   }
 
-  /* Teacher info at bottom-left, shifted up 25% and right 95% */
+  /* Teacher info */
   .teacher-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: translate(95%, -30%);
-    z-index: 2;
+    margin-top: 40px;
     color: #fff;
-    text-align: left;
-  }
-
-  .teacher-info h1 {
-    font-size: 40px;
-    font-weight: 900;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
-  }
-
-  .teacher-info p {
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff;
-    margin-top: 5px;
-  }
-
-  /* Black about section */
-  .about-section {
-    background-color: #000;
-    color: #fff;
-    padding: 100px 20px;
     text-align: center;
   }
 
-  /* Responsive adjustments for mobile / app WebView */
-  @media (max-width: 768px) {
-    .navbar {
-      padding: 10px 20px;
-    }
-    .navbar .nav-buttons button {
-      padding: 12px 20px;
-      font-size: 16px;
-      margin-left: 10px;
-    }
-    .overlay-text h1 {
-      font-size: 32px;
-    }
-    .overlay-text p {
-      font-size: 16px;
-      padding: 10px 12px;
-      line-height: 1.5;
-      max-width: 90%;
-    }
-    .overlay-text .action-buttons button {
-      font-size: 16px;
-      padding: 12px 20px;
-      margin-left: 5px;
-    }
-    .teacher-info {
-      transform: translate(65%, -20%);
-    }
-    .teacher-info h1 {
-      font-size: 28px;
-    }
-    .teacher-info p {
-      font-size: 14px;
-    }
-    .background-section {
-      padding-right: 20px;
-      padding-top: 60px;
-    }
+  .teacher-info h1 {
+    font-size: 28px;
+    font-weight: 900;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 5px 0;
+  }
+
+  .teacher-info p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0;
+  }
+
+  /* About section */
+  .about-section {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
   }
 </style>
 </head>
@@ -254,7 +199,7 @@
       <h1>Start your digital journey here</h1>
       <p>Technology is important for success. Our course gives you key skills. Learn from an expert teacher. Sign up and start your new journey!</p>
 
-      <!-- Animated buttons -->
+      <!-- Buttons -->
       <div class="action-buttons">
         <button class="enroll-btn">Enroll Now</button>
         <button class="view-btn">View Course</button>
@@ -268,7 +213,7 @@
     </div>
   </div>
 
-  <!-- Black about section -->
+  <!-- About section -->
   <div class="about-section">
     <h2>About the Teacher</h2>
     <p>Add your information here...</p>
@@ -276,3 +221,7 @@
 
 </body>
 </html>
+
+</body>
+</html>
+
