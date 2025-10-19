@@ -40,46 +40,46 @@
     z-index:2;
     display:flex;
     flex-direction:column;
-    gap:36px; /* bigger spacing for larger text */
+    gap:24px; /* reduced spacing for smaller size */
     align-items:flex-start;
     margin-top:60vh; /* moved down by 60% of viewport height */
   }
 
   .hero-content h1{
-    font-size:84px; /* 3x larger */
+    font-size:56px; /* 2x larger than original small */
     font-weight:800;
     background: linear-gradient(120deg, #ff6a00, #ffb347, #ffd700, #ff4500);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 4px 4px 16px rgba(0,0,0,0.6);
+    text-shadow: 3px 3px 12px rgba(0,0,0,0.6);
     margin-bottom:12px;
   }
 
   .hero-content p{
-    font-size:48px; /* 3x larger */
+    font-size:32px; /* 2x larger */
     color:#f0f8ff;
     line-height:1.6;
-    max-width:1200px;
+    max-width:1000px;
     word-wrap:break-word;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    text-shadow: 1.5px 1.5px 8px rgba(0,0,0,0.5);
   }
 
   .buttons{
     display:flex;
-    gap:36px; /* 3x spacing */
-    margin-top:18px;
+    gap:24px; /* reduced spacing */
+    margin-top:12px;
   }
 
   .btn{
-    padding:30px 60px; /* 3x larger */
-    font-size:42px; /* 3x larger */
+    padding:20px 40px; /* 2x larger */
+    font-size:28px; /* 2x larger */
     font-weight:700;
     border:none;
-    border-radius:84px; /* 3x rounded */
+    border-radius:56px; /* 2x rounded */
     cursor:pointer;
     color:#071426;
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
-    box-shadow:0 12px 36px rgba(0,0,0,0.4);
+    box-shadow:0 8px 24px rgba(0,0,0,0.4);
     transition: transform .2s ease, box-shadow .2s ease;
   }
 
@@ -88,34 +88,34 @@
     color:#fff;
   }
 
-  .btn:hover{ transform:scale(1.05); box-shadow:0 18px 54px rgba(0,0,0,0.45); }
+  .btn:hover{ transform:scale(1.05); box-shadow:0 12px 36px rgba(0,0,0,0.45); }
 
-  /* Teacher info at bottom right with gradient text and larger size */
+  /* Teacher info at bottom right with gradient text */
   .teacher-info{
     position:absolute;
     bottom:0;
     right:0;
     text-align:right;
     z-index:2;
-    padding:36px 60px;
+    padding:24px 40px;
     border-radius:12px;
   }
   .teacher-info h2{
-    font-size:96px; /* 3x larger */
+    font-size:64px; /* 2x larger */
     font-weight:900;
-    margin-bottom:18px;
+    margin-bottom:12px;
     background: linear-gradient(120deg, #ff6a00, #ffb347, #ffd700, #ff4500);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
   }
   .teacher-info p{
-    font-size:45px; /* 3x larger */
+    font-size:30px; /* 2x larger */
     font-weight:700;
     background: linear-gradient(120deg, #ff6a00, #ffb347, #ffd700, #ff4500);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    text-shadow: 1.5px 1.5px 4px rgba(0,0,0,0.4);
     margin:0;
   }
 
@@ -123,28 +123,27 @@
   .about{
     background:#000;
     color:#ddd;
-    padding:180px 6%; /* scaled for larger text */
+    padding:120px 6%; /* scaled */
     text-align:center;
   }
   .about h3{
-    font-size:66px; /* 3x larger */
+    font-size:44px; /* 2x larger */
     color:#ff6f61;
-    text-shadow:3px 3px 12px rgba(0,0,0,0.5);
+    text-shadow:2px 2px 8px rgba(0,0,0,0.5);
   }
   .about p{
-    font-size:45px; /* 3x larger */
+    font-size:30px; /* 2x larger */
     color:#cce7ff;
-    text-shadow:2px 2px 6px rgba(0,0,0,0.4);
+    text-shadow:1.5px 1.5px 4px rgba(0,0,0,0.4);
   }
 
-  /* MOBILE adjustments */
   @media (max-width:480px){
-    .hero h1{ font-size:72px; }
-    .hero p{ font-size:40px; max-width:360px; }
-    .btn{ padding:25px 50px; font-size:36px; }
-    .teacher-info h2{ font-size:84px; }
-    .teacher-info p{ font-size:36px; }
-    .teacher-info{ bottom:0; right:0; padding:30px 50px; }
+    .hero h1{ font-size:48px; }
+    .hero p{ font-size:28px; max-width:320px; }
+    .btn{ padding:16px 32px; font-size:24px; }
+    .teacher-info h2{ font-size:52px; }
+    .teacher-info p{ font-size:26px; }
+    .teacher-info{ bottom:0; right:0; padding:18px 32px; }
   }
 </style>
 </head>
@@ -178,6 +177,7 @@
 
 </body>
 </html>
+
 
 
 
