@@ -21,7 +21,7 @@
     z-index:100;
   }
   .hamburger{
-    width:35px;
+    width:30px;
     height:3px;
     background:#fff;
     position:relative;
@@ -30,37 +30,57 @@
   .hamburger::before, .hamburger::after{
     content:"";
     position:absolute;
-    width:35px;
+    width:30px;
     height:3px;
     background:#fff;
     left:0;
     transition:0.3s;
   }
-  .hamburger::before{ top:-10px;}
-  .hamburger::after{ top:10px;}
+  .hamburger::before{ top:-8px;}
+  .hamburger::after{ top:8px;}
+
+  /* View Course button on top right */
+  .view-course-btn{
+    position:fixed;
+    top:15px;
+    right:20px;
+    padding:10px 24px;
+    font-size:16px;
+    font-weight:700;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    color:#fff;
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+    z-index:101;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .view-course-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 6px 18px rgba(0,0,0,0.45);
+  }
 
   /* Sidebar menu */
   .sidebar{
     position:fixed;
     top:0;
-    left:-250px;
-    width:250px;
+    left:-230px;
+    width:230px;
     height:100%;
     background:rgba(0,0,0,0.95);
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap:40px;
+    gap:32px;
     transition:0.3s;
     z-index:99;
   }
-  .sidebar.show{
-    left:0;
-  }
+  .sidebar.show{ left:0; }
   .sidebar button{
-    padding:12px 40px;
-    font-size:20px;
+    padding:10px 32px;
+    font-size:18px;
     font-weight:600;
     border:none;
     border-radius:30px;
@@ -88,8 +108,7 @@
     flex-direction:column;
     justify-content:flex-start;
     align-items:flex-start;
-    padding-left:6%;
-    padding-right:6%;
+    padding:0 6%;
     filter:brightness(1.15);
   }
   .hero::before{
@@ -105,102 +124,100 @@
     z-index:2;
     display:flex;
     flex-direction:column;
-    gap:24px;
+    gap:18px;
     align-items:flex-start;
-    margin-top:60vh;
+    margin-top:55vh;
   }
   .hero-content h1{
-    font-size:56px;
+    font-size:42px;
     font-weight:800;
     background: linear-gradient(120deg, #ff6a00, #ffb347, #ffd700, #ff4500);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:3px 3px 12px rgba(0,0,0,0.6);
-    margin-bottom:12px;
+    text-shadow:2px 2px 8px rgba(0,0,0,0.6);
+    margin-bottom:8px;
   }
   .hero-content p{
-    font-size:32px;
+    font-size:22px;
     color:#f0f8ff;
-    line-height:1.6;
-    max-width:1000px;
+    line-height:1.5;
+    max-width:800px;
     word-wrap:break-word;
-    text-shadow:1.5px 1.5px 8px rgba(0,0,0,0.5);
+    text-shadow:1px 1px 5px rgba(0,0,0,0.5);
   }
-  .buttons{
-    display:flex;
-    gap:24px;
-    margin-top:12px;
-  }
+
+  /* Enroll Now button smaller */
   .btn{
-    padding:20px 40px;
-    font-size:28px;
+    padding:12px 24px;  
+    font-size:18px;     
     font-weight:700;
     border:none;
-    border-radius:56px;
+    border-radius:36px;
     cursor:pointer;
     color:#071426;
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
-    box-shadow:0 8px 24px rgba(0,0,0,0.4);
+    box-shadow:0 6px 18px rgba(0,0,0,0.4);
     transition: transform .2s ease, box-shadow .2s ease;
   }
-  .btn.secondary{
-    background:linear-gradient(135deg,#00c6ff,#0072ff);
-    color:#fff;
-  }
-  .btn:hover{ transform:scale(1.05); box-shadow:0 12px 36px rgba(0,0,0,0.45); }
+  .btn:hover{ transform:scale(1.05); box-shadow:0 10px 28px rgba(0,0,0,0.45); }
 
+  /* Teacher Info reduced final 5% */
   .teacher-info{
     position:absolute;
     bottom:0;
     right:0;
     text-align:right;
     z-index:2;
-    padding:24px 40px;
+    padding:12px 20px;
     border-radius:12px;
   }
   .teacher-info h2{
-    font-size:64px;
+    font-size:28px; /* final reduction */
     font-weight:900;
-    margin-bottom:12px;
+    margin-bottom:6px;
     background: linear-gradient(120deg, #ff6a00, #ffb347, #ffd700, #ff4500);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:2px 2px 6px rgba(0,0,0,0.5);
   }
   .teacher-info p{
-    font-size:30px;
+    font-size:15px; /* final reduction */
     font-weight:700;
     background: linear-gradient(120deg, #ff6a00, #ffb347, #ffd700, #ff4500);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:1.5px 1.5px 4px rgba(0,0,0,0.4);
+    text-shadow:1px 1px 3px rgba(0,0,0,0.4);
     margin:0;
   }
 
   .about{
     background:#000;
     color:#ddd;
-    padding:120px 6%;
+    padding:80px 6%;
     text-align:center;
   }
   .about h3{
-    font-size:44px;
+    font-size:32px;
     color:#ff6f61;
     text-shadow:2px 2px 8px rgba(0,0,0,0.5);
   }
   .about p{
-    font-size:30px;
+    font-size:22px;
     color:#cce7ff;
-    text-shadow:1.5px 1.5px 4px rgba(0,0,0,0.4);
+    text-shadow:1px 1px 4px rgba(0,0,0,0.4);
   }
 
+  /* Mobile Adjustments */
   @media (max-width:480px){
-    .hero h1{ font-size:48px; }
-    .hero p{ font-size:28px; max-width:320px; }
-    .btn{ padding:16px 32px; font-size:24px; }
-    .teacher-info h2{ font-size:52px; }
-    .teacher-info p{ font-size:26px; }
-    .teacher-info{ bottom:0; right:0; padding:18px 32px; }
+    .hero-content h1{ font-size:32px; }
+    .hero-content p{ font-size:18px; max-width:300px; }
+    .btn{ padding:10px 20px; font-size:16px; }
+    .view-course-btn{ top:10px; right:10px; padding:8px 20px; font-size:14px; }
+    .teacher-info h2{ font-size:24px; }
+    .teacher-info p{ font-size:13px; }
+    .teacher-info{ bottom:0; right:0; padding:10px 14px; }
+    .about h3{ font-size:28px; }
+    .about p{ font-size:18px; }
   }
 </style>
 </head>
@@ -210,6 +227,9 @@
   <div class="nav">
     <div class="hamburger" onclick="toggleSidebar()"></div>
   </div>
+
+  <!-- View Course button fixed top right -->
+  <button class="view-course-btn" onclick="location.href='course.html'">View Course</button>
 
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
@@ -229,7 +249,6 @@
       </p>
       <div class="buttons">
         <button class="btn" onclick="location.href='login.html'">Enroll Now</button>
-        <button class="btn secondary" onclick="location.href='course.html'">View Course</button>
       </div>
     </div>
 
@@ -239,6 +258,7 @@
     </div>
   </section>
 
+  <!-- About Section -->
   <section class="about">
     <h3>About the Teacher</h3>
     <p>Add your information here...</p>
